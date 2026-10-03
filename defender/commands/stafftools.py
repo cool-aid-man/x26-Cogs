@@ -364,7 +364,7 @@ class StaffTools(MixinMeta, metaclass=CompositeMetaClass):  # type: ignore
              JM: {await conf.join_monitor_enabled()} (WD checks: {await wd_checks_present(ChecksKeys.JoinMonitor)})
              WD: {await conf.warden_enabled()}
              CA: {await conf.ca_enabled()} (WD checks: {await wd_checks_present(ChecksKeys.CommentAnalysis)})
-             Alert: {await conf.alert_enabled()}
+             Staff Alert: {await conf.alert_enabled()}
              Vaporize: {await conf.vaporize_enabled()}
              Silence: {await conf.silence_enabled()}
              Voteout: {await conf.voteout_enabled()}"""

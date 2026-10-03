@@ -29,12 +29,12 @@ class ManualModules(MixinMeta, metaclass=CompositeMetaClass):  # type: ignore
     @commands.cooldown(1, 120, commands.BucketType.channel)
     @commands.command(aliases=["staff"])
     @commands.guild_only()
-    async def alert(self, ctx):
+    async def staffalert(self, ctx):
         """Alert the staff members"""
         guild = ctx.guild
         author = ctx.author
         message = ctx.message
-        EMBED_TITLE = "🚨 • Alert"
+        EMBED_TITLE = "🚨 • Staff Alert"
         EMBED_FIELDS = [
             {"name": "Issuer", "value": f"`{author}`"},
             {"name": "ID", "value": f"`{author.id}`"},

@@ -406,21 +406,21 @@ class Settings(MixinMeta, metaclass=CompositeMetaClass):  # type: ignore
         Passing 'remove' will remove existing checks"""
         await self.wd_check_manager(ctx, WDChecksKeys.InviteFilter, conditions)
 
-    @dset.group(name="alert")
+    @dset.group(name="staffalert", aliases=["alert"])
     @commands.admin()
     async def alertgroup(self, ctx: commands.Context):
-        """Alert manual module configuration
+        """Staff alert manual module configuration
 
         See [p]defender status for more information about this module"""
 
     @alertgroup.command(name="enable")
     async def alertenable(self, ctx: commands.Context, on_or_off: bool):
-        """Toggle alert manual module"""
+        """Toggle staff alert manual module"""
         await self.config.guild(ctx.guild).alert_enabled.set(on_or_off)
         if on_or_off:
-            await ctx.send("Alert manual module enabled. Helper roles will be able to use this.")
+            await ctx.send("Staff alert manual module enabled. Helper roles will be able to use this.")
         else:
-            await ctx.send("Alert manual module disabled.")
+            await ctx.send("Staff alert manual module disabled.")
 
     @dset.group(name="silence")
     @commands.admin()

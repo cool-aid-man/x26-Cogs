@@ -131,7 +131,7 @@ async def make_status(ctx, cog):
     )
 
     helpers = (
-        f"**Helper roles** are users who are able to use `{p}alert` to report "
+        f"**Helper roles** are users who are able to use `{p}staffalert` to report "
         "problems that need your attention.\nIf you wish, you can also enable "
         "*emergency mode*: if no staff activity is detected in a set time window "
         "after an *alert* is issued, helper roles will be granted access to modules "
@@ -369,8 +369,8 @@ async def make_status(ctx, cog):
     minutes = await cog.config.guild(guild).emergency_minutes()
 
     msg = (
-        "**Alert   🚨**\nThis manual module is designed to aid helper roles in reporting bad actors to "
-        f"the staff. Upon issuing the `{p}alert` command the staff will get pinged in the set notification "
+        "**Staff Alert   🚨**\nThis manual module is designed to aid helper roles in reporting bad actors to "
+        f"the staff. Upon issuing the `{p}staffalert` command the staff will get pinged in the set notification "
         "channel and will be given context from where the alert was issued.\nFurther, if any manual module is "
         "set to be used in case of staff inactivity (*emergency mode*), they will be rendered available to "
         "helper roles after the set time window.\n"
@@ -423,7 +423,7 @@ async def make_status(ctx, cog):
     msg += "**enabled**.\n\n" if enabled else "**disabled**.\n\n"
 
     em = discord.Embed(color=discord.Colour.red(), description=msg)
-    em.set_footer(text=f"`{p}dset alert` `{p}dset vaporize` `{p}dset silence` `{p}dset emergency` to configure.")
+    em.set_footer(text=f"`{p}dset staffalert` `{p}dset vaporize` `{p}dset silence` `{p}dset emergency` to configure.")
     em.set_author(name="Manual modules (1/2)")
 
     pages.append(em)
